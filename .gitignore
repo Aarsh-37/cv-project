@@ -43,7 +43,7 @@ htmlcov/
 data/
 *.h5
 *.keras
-*.pt
+
 *.pth
 *.onnx
 checkpoints/
