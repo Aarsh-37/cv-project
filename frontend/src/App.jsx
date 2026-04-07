@@ -1,41 +1,27 @@
-import React from 'react';
-import ImageUpload from './components/ImageUpload';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Services from './pages/Services'
+import Contact from './pages/Contact'
+import Account from './pages/Account'
 
 function App() {
   return (
-    <div className="App">
-      <header className="app-header">
-        <div className="header-content">
-          <div className="logo">
-            <div className="logo-icon">D</div>
-            <span>DermaInspect</span>
-          </div>
-          <nav>
-            <span style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
-              AI-Powered Leprosy Detection
-            </span>
-          </nav>
-        </div>
-      </header>
-      
-      <main className="app-main">
-        <ImageUpload />
-      </main>
-      
-      <footer className="app-footer">
-        <div className="footer-content">
-          <p>
-            <strong>Medical Disclaimer:</strong> This tool is for research and educational purposes only.
-            It is not a substitute for professional medical diagnosis, advice, or treatment.
-          </p>
-          <p style={{ marginTop: '0.5rem', fontSize: '0.75rem' }}>
-            Always consult a qualified healthcare professional for proper diagnosis and treatment.
-          </p>
-        </div>
-      </footer>
-    </div>
-  );
+    <Router>
+      <div className="app-wrapper">
+
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/account" element={<Account />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App

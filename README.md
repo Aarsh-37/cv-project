@@ -1,87 +1,56 @@
-# Leprosy Skin-Lesion Detection Web Application
+# 🏥 MEDIXAL: Advanced Leprosy Detection Portal
 
-A full-stack web application for detecting leprosy from skin lesion images using a deep learning model based on Xception architecture.
+MEDIXAL is a professional-grade medical AI platform designed for the early screening and detection of Leprosy. It features a high-precision 3-class neural analysis system with built-in validation for non-skin imagery.
 
-## Features
+![MEDIXAL Desktop Interface](file:///C:/Users/VICTUS/.gemini/antigravity/brain/7de0d096-c47b-4d8e-9eeb-5c8615478f9e/medixal_full_premium_ui_1772218904322.png)
 
-- **Deep Learning Model**: Xception-based CNN for binary classification (Leprosy vs Non-Leprosy)
-- **Flask Backend**: REST API for model inference
-- **React Frontend**: Modern, responsive UI for image upload and result visualization
-- **Transfer Learning**: Pre-trained on ImageNet, fine-tuned on leprosy dataset
-- **Evaluation Tools**: Confusion matrix and classification metrics
+## 🚀 Key Features
 
-## Tech Stack
+- **Brain-Powered 3-Class AI**: Classifies imagery into `Leprosy`, `Non-Leprosy`, or `Irrelevant` (validation).
+- **Intelligent Rejection Link**: Automatically identifies and rejects non-skin uploads (cars, animals, landscapes) to maintain diagnostic integrity.
+- **Premium Aether Scanner**: A unified "one-frame" scanning interface with real-time neural processing animations.
+- **MEDIXAL Brand Identity**: Modern medical aesthetic with a sticky navigation bar, high-impact hero sections, and professional grid layouts.
+- **FastAPI Core**: High-performance, asynchronous backend serving the PyTorch model.
 
-### Backend
-- Python 3.8+
-- TensorFlow/Keras
-- Flask
-- OpenCV
-- NumPy
-- Seaborn (for visualization)
+## 🏗️ Architecture
 
-### Frontend
-- React (Vite)
-- Axios
-- CSS3
+- **AI Model**: PyTorch ResNet-18 (3 Classes).
+- **Backend**: FastAPI with async inference handlers.
+- **Frontend**: React 19 + Vite 7 + Framer Motion (Animations) + Lucide React (Icons).
+- **Design System**: Medical Blue Palette, Inter/Poppins Typography, CSS 12-column grid.
 
-## Setup Instructions
+## 🛠️ Installation & Setup
 
-### Backend Setup
+### 1. Requirements
+- Python 3.10+
+- Node.js 18+
+- PyTorch & Torchvision
 
-1. **Create a virtual environment** (recommended):
-   ```bash
-   cd backend
-   python -m venv venv
-   
-   # On Windows:
-   venv\\Scripts\\activate
-   
-   # On macOS/Linux:
-   source venv/bin/activate
-   ```
+### 2. Backend Setup
+```bash
+# In the root directory
+pip install fastapi uvicorn torch torchvision pillow python-multipart
+python app.py
+```
+The backend will start on `http://localhost:8000`.
 
-2. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 3. Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+The frontend will start on `http://localhost:5173`.
 
-3. **Train the model**:
-   ```bash
-   cd model
-   python train.py
-   ```
-   
-   **Note**: Update the `DATA_DIR` path in `train.py` to point to your dataset location.
+## 🧠 Training Information
 
-4. **Run the Flask API**:
-   ```bash
-   cd ..
-   python app.py
-   ```
+The model was trained on a custom dataset of skin lesions, augmented with synthesized "Irrelevant" class data (general objects) to ensure the system cannot be spoofed by non-medical imagery.
 
-### Frontend Setup
+- **Preprocessing**: 224x224 RGB resizing & ImageNet normalization.
+- **Accuracy**: ~81% Training Accuracy over initial rapid-fire epochs.
 
-1. **Navigate to frontend directory**:
-   ```bash
-   cd frontend
-   ```
+## ⚠️ Disclaimer
+This tool is intended for early screening assistance and educational purposes. It is **not** a replacement for professional clinical diagnosis. Always consult a qualified medical professional for health concerns.
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
-
-## Important Notes
-
-⚠️ **Medical Disclaimer**: This is an AI-based decision support tool and **NOT a substitute for professional medical diagnosis**. Always consult a qualified healthcare professional for proper diagnosis and treatment.
-
-
-## License
-
-This project is for educational and research purposes.
+---
+© 2026 MEDIXAL AI. Designed with precision for global health tracking.
